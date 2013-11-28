@@ -1,0 +1,26 @@
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: %kernel.cache_dir%/test.db
+    orm:
+        auto_generate_proxy_classes: true
+        auto_mapping: true
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_test.yml"
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        enabled: false
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug
+
+swiftmailer:
+    disable_delivery: true
