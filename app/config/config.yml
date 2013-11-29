@@ -1,0 +1,7 @@
+imports:
+    - { resource: "@ApnetFunctionalTestBundle/Resources/config/config_test.yml" }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+    secret: qwerty

@@ -2,6 +2,9 @@
 
 /**
  * Abstract single object data fixture
+ *
+ * @author Andrey F. Mindubaev <covex.mobile@gmail.com>
+ * @license http://opensource.org/licenses/MIT  MIT License
  */
 
 namespace Apnet\FunctionalTestBundle\Framework\DataFixtures;
@@ -13,8 +16,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Abstract single object data fixture
- *
- * @author Andrey F. Mindubaev <covex.mobile@gmail.com>
  */
 abstract class SingleObjectFixture extends AbstractFixture
   implements ContainerAwareInterface

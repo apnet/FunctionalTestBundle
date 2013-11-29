@@ -2,8 +2,11 @@
 
 /**
  * WebTestCase
+ *
+ * @author Andrey F. Mindubaev <covex.mobile@gmail.com>
+ * @license http://opensource.org/licenses/MIT  MIT License
+ * @link https://github.com/liip/LiipFunctionalTestBundle
  */
-
 namespace Apnet\FunctionalTestBundle\Framework;
 
 use Symfony\Bridge\Doctrine\DataFixtures\ContainerAwareLoader;
@@ -24,9 +27,6 @@ use Doctrine\ORM\Tools\SchemaTool;
 
 /**
  * WebTestCase is the base class for functional tests.
- *
- * @author Andrey F. Mindubaev <covex.mobile@gmail.com>
- * @see https://github.com/liip/LiipFunctionalTestBundle
  */
 abstract class WebTestCase extends BaseWebTestCase
 {
