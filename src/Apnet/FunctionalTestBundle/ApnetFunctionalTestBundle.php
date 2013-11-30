@@ -9,11 +9,22 @@
 namespace Apnet\FunctionalTestBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Apnet Functional Test Bundle
  */
 class ApnetFunctionalTestBundle extends Bundle
 {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build(ContainerBuilder $container)
+  {
+    $container->addCompilerPass(
+      new DependencyInjection\Compiler\TestClientPass()
+    );
+  }
 
 }

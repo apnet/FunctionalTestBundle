@@ -9,7 +9,6 @@
 
 namespace Apnet\FunctionalTestBundle\HttpKernel;
 
-use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use JooS\Stream\Files;
 
@@ -55,7 +54,7 @@ abstract class AppKernel extends Kernel
    */
   public function __destruct()
   {
-    unset($this->_files);
+    $this->_files = null;
   }
 
   /**

@@ -1,10 +1,19 @@
 <?php
 
+/**
+ * Test Framework\WebTestCase class
+ *
+ * @author Andrey F. Mindubaev <covex.mobile@gmail.com>
+ * @license http://opensource.org/licenses/MIT  MIT License
+ */
 namespace Apnet\FunctionalTestBundle\Tests\Framework;
 
 use Apnet\FunctionalTestBundle\Framework\WebTestCase;
-use Symfony\Bundle\FrameworkBundle\Client;
+use Apnet\FunctionalTestBundle\Framework\Client;
 
+/**
+ * Test Framework\WebTestCase class
+ */
 class WebTestCaseTest extends WebTestCase
 {
 
@@ -15,7 +24,7 @@ class WebTestCaseTest extends WebTestCase
    */
   public function testClient()
   {
-    $client = $this->setupClient();
+    $client = self::createClient();
 
     $this->assertTrue($client instanceof Client);
   }
