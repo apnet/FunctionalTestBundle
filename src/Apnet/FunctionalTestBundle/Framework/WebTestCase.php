@@ -44,7 +44,7 @@ abstract class WebTestCase extends BaseWebTestCase
     /* @var $client Client */
     if (is_null(self::$_client)) {
       self::$_client = $client;
-      self::setDefaultClientUp(self::$_client);
+      static::setDefaultClientUp(self::$_client);
     }
     return $client;
   }
@@ -55,10 +55,10 @@ abstract class WebTestCase extends BaseWebTestCase
   protected function tearDown()
   {
     if (!is_null(self::$_client)) {
-      self::tearDefaultClientDown(self::$_client);
+      static::tearDefaultClientDown(self::$_client);
     }
-    parent::tearDown();
     self::$_client = null;
+    parent::tearDown();
   }
 
   /**
