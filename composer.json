@@ -10,15 +10,15 @@
         "covex-nn/joos-stream" : "~4.1"
     },
     "require-dev" : {
-        "symfony/monolog-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "doctrine/orm" : ">=2.2.3,<2.4-dev",
-        "covex-nn/phpqatools" : "~1.3",
-        "apnet/coding-standard" : "~1.0"
+        "symfony/monolog-bundle": "*",
+        "symfony/swiftmailer-bundle": "*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "covex-nn/phpqatools": "~1.3",
+        "apnet/coding-standard": "~1.0"
     },
     "extra" : {
         "branch-alias": {
-            "dev-master" : "1.0.x-dev"
+            "dev-master" : "1.1.x-dev"
         }
     },
     "autoload" : {
