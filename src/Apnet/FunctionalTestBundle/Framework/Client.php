@@ -49,8 +49,11 @@ class Client extends BaseClient
    */
   public function setUp()
   {
-    $manager = $this->getContainer()
-      ->get('doctrine')
+    $container = $this->getContainer();
+    if (!$container->has('doctrine')) {
+      return;
+    }
+    $manager = $container->get('doctrine')
       ->getManager();
     /* @var $manager EntityManager */
     $connection = $manager->getConnection();
