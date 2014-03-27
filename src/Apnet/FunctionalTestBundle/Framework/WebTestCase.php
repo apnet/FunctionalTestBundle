@@ -36,11 +36,18 @@ abstract class WebTestCase extends BaseWebTestCase
    * @param array $server  An array of server parameters
    *
    * @return Client A Client instance
+   * @throws \RuntimeException when test.client was redefined somewhere
    */
   protected static function createClient(array $options = array(), array $server = array())
   {
     $options['environment'] = 'test';
+
     $client = parent::createClient($options, $server);
+    if (!($client instanceof Client)) {
+      throw new \RuntimeException(
+        "'test.client' was redefined to " . get_class($client)
+      );
+    }
     /* @var $client Client */
     if (is_null(self::$_client)) {
       self::$_client = $client;
