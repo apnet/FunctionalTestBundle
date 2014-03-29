@@ -23,49 +23,31 @@ abstract class AppKernel extends Kernel
    *
    * @var Files
    */
-  private $_files = null;
+  private static $_files = null;
 
   /**
    * Cache dir
    *
    * @var string
    */
-  private $_cacheDir = null;
+  private static $_cacheDir = null;
 
   /**
    * Logs dir
    *
    * @var string
    */
-  private $_logsDir = null;
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct($environment, $debug)
-  {
-    $this->_files = new Files();
-
-    parent::__construct($environment, $debug);
-  }
-
-  /**
-   * Kernel destructor
-   */
-  public function __destruct()
-  {
-    $this->_files = null;
-  }
+  private static $_logsDir = null;
 
   /**
    * {@inheritdoc}
    */
   public function getCacheDir()
   {
-    if (is_null($this->_cacheDir)) {
-      $this->_cacheDir = $this->_files->mkdir();
+    if (is_null(self::$_cacheDir)) {
+      self::$_cacheDir = self::_getFiles()->mkdir();
     }
-    return $this->_cacheDir;
+    return self::$_cacheDir;
   }
 
   /**
@@ -73,10 +55,23 @@ abstract class AppKernel extends Kernel
    */
   public function getLogDir()
   {
-    if (is_null($this->_logsDir)) {
-      $this->_logsDir = $this->_files->mkdir();
+    if (is_null(self::$_logsDir)) {
+      self::$_logsDir = self::_getFiles()->mkdir();
     }
-    return $this->_logsDir;
+    return self::$_logsDir;
+  }
+
+  /**
+   * Get Files helper
+   *
+   * @return Files
+   */
+  private static function _getFiles()
+  {
+    if (is_null(self::$_files)) {
+      self::$_files = new Files();
+    }
+    return self::$_files;
   }
 
 }

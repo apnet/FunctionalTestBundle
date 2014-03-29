@@ -22,7 +22,19 @@ class WebTestCaseTest extends WebTestCase
    *
    * @return null
    */
-  public function testClient()
+  public function testClientOne()
+  {
+    $client = self::createClient();
+
+    $this->assertTrue($client instanceof Client);
+  }
+
+  /**
+   * Test client (cache must not be recreated)
+   *
+   * @return null
+   */
+  public function testClientTwo()
   {
     $client = self::createClient();
 
