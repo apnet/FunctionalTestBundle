@@ -2,6 +2,7 @@
 bin
 build
 build.local.properties
+composer.lock
 composer.phar
 phpunit.xml
 vendor
