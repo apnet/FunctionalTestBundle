@@ -91,6 +91,13 @@ class Client extends BaseClient
    */
   public function tearDown()
   {
+    $container = $this->getContainer();
+    if ($container->has('doctrine')) {
+      $manager = $container->get('doctrine')
+        ->getManager();
+      /* @var $manager EntityManager */
+      $manager->getConnection()->close();
+    }
     $this->_executor = null;
   }
 

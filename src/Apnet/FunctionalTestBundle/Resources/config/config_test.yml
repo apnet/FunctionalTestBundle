@@ -16,7 +16,7 @@ framework:
 monolog:
     handlers:
         main:
-            type:  stream
+            type:  syslog
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
 
