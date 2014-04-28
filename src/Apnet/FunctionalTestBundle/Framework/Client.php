@@ -32,14 +32,14 @@ class Client extends BaseClient
    *
    * @var ORMExecutor
    */
-  private $_executor;
+  private $executor;
 
   /**
    * Empty database file contents
    *
    * @var string
    */
-  private static $_dbBackup = null;
+  private static $dbBackup = null;
 
   /**
    * Create empty database
@@ -62,9 +62,9 @@ class Client extends BaseClient
     if (isset($parameters["path"])) {
       $dbPath = $parameters["path"];
 
-      if (!is_null(self::$_dbBackup)) {
+      if (!is_null(self::$dbBackup)) {
         $connection->close();
-        file_put_contents($dbPath, self::$_dbBackup);
+        file_put_contents($dbPath, self::$dbBackup);
         $connection->connect();
       } else {
         $metadata = $manager->getMetadataFactory()->getAllMetadata();
@@ -76,7 +76,7 @@ class Client extends BaseClient
         }
 
         $connection->close();
-        self::$_dbBackup = file_get_contents($dbPath);
+        self::$dbBackup = file_get_contents($dbPath);
         $connection->connect();
       }
     } else {
@@ -98,7 +98,7 @@ class Client extends BaseClient
       /* @var $manager EntityManager */
       $manager->getConnection()->close();
     }
-    $this->_executor = null;
+    $this->executor = null;
   }
 
   /**
@@ -111,12 +111,12 @@ class Client extends BaseClient
   public function loadFixtures(array $fixtures)
   {
     $container = $this->getContainer();
-    if (is_null($this->_executor)) {
+    if (is_null($this->executor)) {
       $manager = $container->get('doctrine')->getManager();
       /* @var $manager EntityManager */
       $referenceRepository = new ProxyReferenceRepository($manager);
-      $this->_executor = new ORMExecutor($manager);
-      $this->_executor->setReferenceRepository($referenceRepository);
+      $this->executor = new ORMExecutor($manager);
+      $this->executor->setReferenceRepository($referenceRepository);
     }
 
     $loader = new ContainerAwareLoader($container);
@@ -126,7 +126,7 @@ class Client extends BaseClient
       }
     }
     /* @var $loader Loader */
-    $this->_executor->execute(
+    $this->executor->execute(
       $loader->getFixtures(), true
     );
   }
@@ -175,5 +175,4 @@ class Client extends BaseClient
     rewind($filePointer);
     return stream_get_contents($filePointer);
   }
-
 }

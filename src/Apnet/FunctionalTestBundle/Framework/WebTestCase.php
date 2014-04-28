@@ -22,7 +22,7 @@ abstract class WebTestCase extends BaseWebTestCase
    *
    * @var Client
    */
-  private static $_client = null;
+  private static $client = null;
 
   /**
    * Creates a Client.
@@ -39,8 +39,8 @@ abstract class WebTestCase extends BaseWebTestCase
    * @throws \RuntimeException when test.client was redefined somewhere
    */
   protected static function createClient(
-      array $options = array(),
-      array $server = array()
+    array $options = array(),
+    array $server = array()
   ) {
     if (!is_array($options)) {
       $options = array();
@@ -57,9 +57,9 @@ abstract class WebTestCase extends BaseWebTestCase
       );
     }
     /* @var $client Client */
-    if (is_null(self::$_client)) {
-      self::$_client = $client;
-      static::setDefaultClientUp(self::$_client);
+    if (is_null(self::$client)) {
+      self::$client = $client;
+      static::setDefaultClientUp(self::$client);
     }
     return $client;
   }
@@ -69,10 +69,10 @@ abstract class WebTestCase extends BaseWebTestCase
    */
   protected function tearDown()
   {
-    if (!is_null(self::$_client)) {
-      static::tearDefaultClientDown(self::$_client);
+    if (!is_null(self::$client)) {
+      static::tearDefaultClientDown(self::$client);
     }
-    self::$_client = null;
+    self::$client = null;
     parent::tearDown();
   }
 
@@ -102,5 +102,4 @@ abstract class WebTestCase extends BaseWebTestCase
   {
     $client->tearDown();
   }
-
 }

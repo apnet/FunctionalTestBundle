@@ -40,5 +40,4 @@ class WebTestCaseTest extends WebTestCase
 
     $this->assertTrue($client instanceof Client);
   }
-
 }
