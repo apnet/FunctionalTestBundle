@@ -46,5 +46,4 @@ class TestClientPass implements CompilerPassInterface
 
     $container->setAlias('test.client', 'apnet_ftb.webtest.client');
   }
-
 }

@@ -17,8 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Abstract single object data fixture
  */
-abstract class SingleObjectFixture extends AbstractFixture
-  implements ContainerAwareInterface
+abstract class SingleObjectFixture extends AbstractFixture implements
+  ContainerAwareInterface
 {
 
   /**
@@ -33,7 +33,7 @@ abstract class SingleObjectFixture extends AbstractFixture
    *
    * @return mixed
    */
-  abstract function createObject();
+  abstract public function createObject();
 
   /**
    * {@inheritdoc}
@@ -53,14 +53,14 @@ abstract class SingleObjectFixture extends AbstractFixture
    *
    * @var ContainerInterface
    */
-  private $_container;
+  private $container;
 
   /**
    * {@inheritdoc}
    */
   public function setContainer(ContainerInterface $container = null)
   {
-    $this->_container = $container;
+    $this->container = $container;
   }
 
   /**
@@ -70,7 +70,6 @@ abstract class SingleObjectFixture extends AbstractFixture
    */
   public function getContainer()
   {
-    return $this->_container;
+    return $this->container;
   }
-
 }

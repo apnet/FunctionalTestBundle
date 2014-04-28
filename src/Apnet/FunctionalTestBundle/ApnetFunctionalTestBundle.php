@@ -26,5 +26,4 @@ class ApnetFunctionalTestBundle extends Bundle
       new DependencyInjection\Compiler\TestClientPass()
     );
   }
-
 }
