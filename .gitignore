@@ -1,4 +1,6 @@
 .vagrant
+app/cache
+app/logs
 bin
 build
 build.local.properties
