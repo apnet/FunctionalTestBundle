@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\Debug\Debug;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 
 if (!file_exists(dirname(__DIR__) . "/vendor/autoload.php")) {
   echo
@@ -8,11 +9,14 @@ if (!file_exists(dirname(__DIR__) . "/vendor/autoload.php")) {
     'curl -s http://getcomposer.org/installer | php' . PHP_EOL .
     'php composer.phar install' . PHP_EOL;
 } else {
-  require_once dirname(__DIR__) . "/vendor/autoload.php";
+  $loader = require_once __DIR__ . "/../vendor/autoload.php";
 
-  $loader = new Composer\Autoload\ClassLoader();
+  //  $loader = new Composer\Autoload\ClassLoader();
   $loader->add("Apnet\\Dev\\", __DIR__ . "/src");
+  $loader->add("Apnet\\TestEntityBundle\\", __DIR__ . "/src");
   $loader->register();
+
+  AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
   chdir(dirname(__DIR__));
   Debug::enable();

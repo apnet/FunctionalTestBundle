@@ -21,6 +21,7 @@ class AppKernel extends FunctionalTestBundle\HttpKernel\AppKernel
       new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
       new FunctionalTestBundle\ApnetFunctionalTestBundle(),
 
+      new Apnet\TestEntityBundle\ApnetTestEntityBundle(),
       new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
     );
   }

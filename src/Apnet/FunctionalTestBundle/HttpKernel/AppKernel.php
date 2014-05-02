@@ -44,7 +44,9 @@ abstract class AppKernel extends Kernel
    */
   public function getCacheDir()
   {
-    if (is_null(self::$cacheDir)) {
+    if ($this->environment !== "test") {
+      self::$cacheDir = parent::getCacheDir();
+    } elseif (is_null(self::$cacheDir)) {
       self::$cacheDir = self::getFiles()->mkdir();
     }
     return self::$cacheDir;
@@ -55,7 +57,9 @@ abstract class AppKernel extends Kernel
    */
   public function getLogDir()
   {
-    if (is_null(self::$logsDir)) {
+    if ($this->environment !== "test") {
+      self::$logsDir = parent::getLogDir();
+    } elseif (is_null(self::$logsDir)) {
       self::$logsDir = self::getFiles()->mkdir();
     }
     return self::$logsDir;
