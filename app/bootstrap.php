@@ -10,6 +10,10 @@ if (!file_exists(dirname(__DIR__) . "/vendor/autoload.php")) {
 } else {
   require_once dirname(__DIR__) . "/vendor/autoload.php";
 
+  $loader = new Composer\Autoload\ClassLoader();
+  $loader->add("Apnet\\Dev\\", __DIR__ . "/src");
+  $loader->register();
+
   chdir(dirname(__DIR__));
   Debug::enable();
 }

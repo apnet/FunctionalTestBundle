@@ -13,12 +13,15 @@ class AppKernel extends FunctionalTestBundle\HttpKernel\AppKernel
   {
     return array(
       new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+      new Symfony\Bundle\TwigBundle\TwigBundle(),
       new Symfony\Bundle\MonologBundle\MonologBundle(),
       new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
       new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
 
       new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-      new FunctionalTestBundle\ApnetFunctionalTestBundle()
+      new FunctionalTestBundle\ApnetFunctionalTestBundle(),
+
+      new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
     );
   }
 
@@ -29,5 +32,4 @@ class AppKernel extends FunctionalTestBundle\HttpKernel\AppKernel
   {
     $loader->load(__DIR__ . "/config/config.yml");
   }
-
 }
