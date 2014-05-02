@@ -9,9 +9,8 @@ if (!file_exists(dirname(__DIR__) . "/vendor/autoload.php")) {
     'curl -s http://getcomposer.org/installer | php' . PHP_EOL .
     'php composer.phar install' . PHP_EOL;
 } else {
-  $loader = require_once __DIR__ . "/../vendor/autoload.php";
+  $loader = include __DIR__ . "/../vendor/autoload.php";
 
-  //  $loader = new Composer\Autoload\ClassLoader();
   $loader->add("Apnet\\Dev\\", __DIR__ . "/src");
   $loader->add("Apnet\\TestEntityBundle\\", __DIR__ . "/src");
   $loader->register();
