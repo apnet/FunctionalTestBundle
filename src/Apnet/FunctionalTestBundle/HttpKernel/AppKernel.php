@@ -33,32 +33,16 @@ abstract class AppKernel extends Kernel
   private static $cacheDir = null;
 
   /**
-   * Logs dir
-   *
-   * @var string
-   */
-  private static $logsDir = null;
-
-  /**
    * {@inheritdoc}
    */
   public function getCacheDir()
   {
-    if (is_null(self::$cacheDir)) {
+    if ($this->environment !== "test") {
+      self::$cacheDir = parent::getCacheDir();
+    } elseif (is_null(self::$cacheDir)) {
       self::$cacheDir = self::getFiles()->mkdir();
     }
     return self::$cacheDir;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getLogDir()
-  {
-    if (is_null(self::$logsDir)) {
-      self::$logsDir = self::getFiles()->mkdir();
-    }
-    return self::$logsDir;
   }
 
   /**

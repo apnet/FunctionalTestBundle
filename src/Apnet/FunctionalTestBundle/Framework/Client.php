@@ -92,7 +92,7 @@ class Client extends BaseClient
   public function tearDown()
   {
     $container = $this->getContainer();
-    if ($container->has('doctrine')) {
+    if ($container && $container->has('doctrine')) {
       $manager = $container->get('doctrine')
         ->getManager();
       /* @var $manager EntityManager */
