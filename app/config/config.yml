@@ -29,3 +29,7 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         readme_md: %kernel.root_dir%/../README.md
+
+covex_twig_callable_bridge:
+    functions:
+       file_get_contents: file_get_contents

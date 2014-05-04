@@ -10,10 +10,7 @@ if (!file_exists(dirname(__DIR__) . "/vendor/autoload.php")) {
     'php composer.phar install' . PHP_EOL;
 } else {
   $loader = include __DIR__ . "/../vendor/autoload.php";
-
-  $loader->add("Apnet\\Dev\\", __DIR__ . "/src");
   $loader->add("Apnet\\TestEntityBundle\\", __DIR__ . "/src");
-  $loader->register();
 
   AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 

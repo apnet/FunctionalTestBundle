@@ -3,7 +3,9 @@
 use Apnet\FunctionalTestBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
+// @codingStandardsIgnoreStart
 class AppKernel extends FunctionalTestBundle\HttpKernel\AppKernel
+// @codingStandardsIgnoreEnd
 {
 
   /**
@@ -22,6 +24,7 @@ class AppKernel extends FunctionalTestBundle\HttpKernel\AppKernel
       new FunctionalTestBundle\ApnetFunctionalTestBundle(),
 
       new Apnet\TestEntityBundle\ApnetTestEntityBundle(),
+      new Covex\TwigCallableBridgeBundle\CovexTwigCallableBridgeBundle(),
       new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
     );
   }
