@@ -1078,16 +1078,16 @@
     "packages-dev": [
         {
             "name": "apnet/coding-standard",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/apnet/coding-standard.git",
-                "reference": "e4702fc11a8f65e44d7975c92c25d4aae0064b2a"
+                "reference": "ff070c2466e346292f0ba34237c98b0a37abaadf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apnet/coding-standard/zipball/e4702fc11a8f65e44d7975c92c25d4aae0064b2a",
-                "reference": "e4702fc11a8f65e44d7975c92c25d4aae0064b2a",
+                "url": "https://api.github.com/repos/apnet/coding-standard/zipball/ff070c2466e346292f0ba34237c98b0a37abaadf",
+                "reference": "ff070c2466e346292f0ba34237c98b0a37abaadf",
                 "shasum": ""
             },
             "require": {
@@ -1114,7 +1114,7 @@
                 "MIT"
             ],
             "description": "Apnet PHP coding standard",
-            "time": "2015-04-18 13:38:41"
+            "time": "2015-04-18 18:07:07"
         },
         {
             "name": "covex-nn/twig-callable-bridge-bundle",
