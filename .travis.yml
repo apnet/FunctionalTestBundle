@@ -7,9 +7,6 @@ php:
 env:
    global:
       - secure: "ghBjKQyD4+cwH8ovZtw6AvQgYYmYQw2LuwYYXPJOdURFP0CgAsCzwM6htYD7d2Qn5x49z7jDJYh0Ah+6kFzcBvgY8d3ghrcTFWpYgNDDIjfOH8zaIcCdqHOHAfMLDDxC7aySexx5nXpq9CyzZui+DsMh239XtlYZ1p1YNlFQR4s="
-   matrix:
-      - SYMFONY_VERSION=2.3.*
-      - SYMFONY_VERSION=2.4.*
 
 before_script:
    - sh -c "if $TRAVIS_SECURE_ENV_VARS; then composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN; fi"
