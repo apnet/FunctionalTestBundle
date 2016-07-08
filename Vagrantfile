@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider :virtualbox do |v|
     v.name = "Apnet.FunctionalTest"
-    v.customize ["modifyvm", :id, "--memory", 8192]
+    # v.customize ["modifyvm", :id, "--memory", 8192]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
