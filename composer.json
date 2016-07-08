@@ -4,29 +4,28 @@
     "description" : "Apnet Functional test bundle",
     "license" : "MIT",
     "require" : {
-        "symfony/framework-bundle" : "~2.3",
-        "symfony/browser-kit" : "~2.3",
-        "symfony/finder" : "~2.3",
+        "symfony/framework-bundle" : "~2.3|~3.0",
+        "symfony/browser-kit" : "~2.3|~3.0",
+        "symfony/finder" : "~2.3|~3.0",
         "doctrine/doctrine-fixtures-bundle" : "~2.2",
         "covex-nn/joos-stream" : "~4.1"
     },
     "require-dev" : {
-        "symfony/symfony" : "~2.3",
+        "symfony/symfony" : "~2.3|~3.0",
         "symfony/monolog-bundle": "~2.3",
         "symfony/swiftmailer-bundle" : "~2.3",
-        "symfony/twig-bundle" : "~2.3",
+        "symfony/twig-bundle" : "~2.3|~3.0",
         "doctrine/orm": "~2.2,>=2.2.3",
         "phpunit/phpunit" : "~4.0",
         "apnet/coding-standard": "~2.0",
-        "covex-nn/twig-callable-bridge-bundle" : "~1.0",
+        "covex-nn/twig-callable-bridge-bundle" : "~1.1",
         "knplabs/knp-markdown-bundle" : "~1.3"
     },
     "extra" : {
         "branch-alias": {
-            "dev-master" : "1.1.x-dev"
+            "dev-master" : "1.2.x-dev"
         }
     },
-    "minimum-stability" : "beta",
     "autoload" : {
         "psr-4" : {
             "Apnet\\FunctionalTestBundle\\" : "src/Apnet/FunctionalTestBundle/"

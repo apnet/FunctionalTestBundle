@@ -1,5 +1,5 @@
 services:
     apnet_ftb.webtest.client:
         class: Apnet\FunctionalTestBundle\Framework\Client
-        arguments: [ @kernel, %test.client.parameters%, @test.client.history, @test.client.cookiejar ]
+        arguments: [ "@kernel", %test.client.parameters%, "@test.client.history", "@test.client.cookiejar" ]
         scope: prototype
